@@ -1,0 +1,28 @@
+
+{
+  "private": true,
+  "scripts": {
+    "start": "vn dev",
+    "build": "vn build",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,scss,vue,md,json}'",
+    "test": "vn-test",
+    "test:coverage": "vn-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "eslint": "^6.8.0",
+    "eslint-config-lope": "^1.2.1"
+  }
+}
